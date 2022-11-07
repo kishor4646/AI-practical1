@@ -1,0 +1,25 @@
+import shutil
+path = "bubblesort1.py"
+stat = shutil.disk_usage(path)
+print("disk usage statistics:",stat)
+
+import time
+start = time.time()
+
+def bubblesortPython(array):
+	swapFlag = True
+	while swapFlag:
+		swapFlag =False
+		for i in range(len(array)-1):
+			if array[i] > array[i+1]:
+				array[i], array[i+1] = array[i+1], array[i]
+				print("swapped: {} with {}".format(array[i],array[i+1]))
+				swapFlag = True
+		return array
+array = [70,20,30,60,10,50,40]
+print("\nunsorted array is:",array)
+bubblesortPython(array)
+print("\nsorted array is:",array)
+end = time.time()
+print("the time complexity of the program is:",end - start)
+Footer
